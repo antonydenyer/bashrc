@@ -1,5 +1,9 @@
 #!/bin/bash
 cp -r [!.git]* ~
-curl -sL https://github.com/xvzf/vcprompt/raw/master/bin/vcprompt > ~/bin/vcprompt
-chmod 755 ~/bin/vcprompt
+
+if [ ! -f ~/bin/vcprompt ]; then
+	echo "installing vcprompt"
+	curl -sL https://github.com/xvzf/vcprompt/raw/master/bin/vcprompt > ~/bin/vcprompt
+	chmod 755 ~/bin/vcprompt
+fi
 
