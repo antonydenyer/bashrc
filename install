@@ -1,5 +1,5 @@
 #!/bin/bash
-cp -r [!.git]* ~
+cp -R [!.git]* ~/
 
 if [ ! -f ~/bin/vcprompt ]; then
 	echo "installing vcprompt"
