@@ -108,4 +108,7 @@ YELLOW="\[\e[1;33m\]"
 export PS1="${GOLD}\u${GRAY}@${CYAN}\h ${GRAY}in ${GREEN}\w ${RED}\$(vcprompt)\n${GRAY}$ "
 export HISTIGNORE="&:ls:[bf]g:exit"
 
+if [ -f ~/bin/acd_func.sh ]; then
+        . ~/bin/acd_func.sh
+fi
 
