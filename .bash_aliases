@@ -21,3 +21,4 @@ alias gb='git branch'
 alias gs='git status'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias pull='git pull origin master'
+alias ifk = "!git reset --hard && git clean -d -fx"
