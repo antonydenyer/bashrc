@@ -1,9 +1,10 @@
 #!/bin/bash
-cp -R [!.git]* ~/
+cp -Rv ./ ~/
+find ~ -name '.svn' -exec rm -rf {} \;
 
 if [ ! -f ~/bin/vcprompt ]; then
 	echo "installing vcprompt"
-	curl -sL https://github.com/xvzf/vcprompt/raw/master/bin/vcprompt > ~/bin/vcprompt
+	curl -sL https://raw.github.com/djl/vcprompt/master/bin/vcprompt ~/bin/vcprompt
 	chmod 755 ~/bin/vcprompt
 fi
 
