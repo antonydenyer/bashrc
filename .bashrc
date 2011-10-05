@@ -112,3 +112,8 @@ if [ -f ~/bin/acd_func.sh ]; then
         . ~/bin/acd_func.sh
 fi
 
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+
