@@ -96,6 +96,10 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+function parse_git_branch {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+}
+
 # Some example functions
 # function settitle() { echo -ne "\e]2;$@\a\e]1;$@\a"; }
 GRAY="\[\e[0;37m\]"
@@ -105,7 +109,7 @@ GREEN="\[\e[0;32m\]"
 RED="\[\e[1;31m\]"
 YELLOW="\[\e[1;33m\]"
 
-export PS1="${GOLD}\u${GRAY}@${CYAN}\h ${GRAY}in ${GREEN}\w ${RED}\$(vcprompt)\n${GRAY}$ "
+export PS1="${GOLD}\u${GRAY}@${CYAN}\h ${GRAY}in ${GREEN}\w ${RED}\$(parse_git_branch)\n${GRAY}$ "
 export HISTIGNORE="&:ls:[bf]g:exit"
 
 if [ -f ~/bin/acd_func.sh ]; then
