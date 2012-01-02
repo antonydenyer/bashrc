@@ -3,7 +3,7 @@
     lg = log --graph --pretty=oneline --abbrev-commit
 [user]
 	name = Antony Denyer
-	email = antonydenyer@hotmail.com
+	email = antonydenyer@gmail.com
 
 [color]
     branch = auto
