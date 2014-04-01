@@ -19,7 +19,6 @@ alias tree='tree -Csu'     # nice alternative to 'recursive ls'
 
 
 # git
-alias gl='git pull'
 alias gp='git push'
 alias gpom='git push origin master'
 alias gd='git diff'
