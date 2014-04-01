@@ -6,7 +6,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ls
 alias l="ls -al --group-directories-first --color"
 alias ll="ls -l --group-directories-first --color"
-alias ls='ls -hF --color'  # add colors for filetype recognition
 alias la='ls -Al'          # show hidden files
 alias lx='ls -lXB'         # sort by extension
 alias lk='ls -lSr'         # sort by size, biggest last
@@ -30,6 +29,5 @@ alias gs='git status'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias pull='git pull origin master'
 alias gl="git log --pretty=tformat:'%Cred%h%Creset %Cblue%d%Creset %Cgreen%s%Creset %cn, %cr' --graph"
-'"
 alias df='df -kTh'
 alias du='du -kh'
