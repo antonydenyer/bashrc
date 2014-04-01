@@ -30,6 +30,7 @@ alias gb='git branch'
 alias gs='git status'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias pull='git pull origin master'
-
+alias gl="git log --pretty=tformat:'%Cred%h%Creset %Cblue%d%Creset %Cgreen%s%Creset %cn, %cr' --graph"
+'"
 alias df='df -kTh'
 alias du='du -kh'
