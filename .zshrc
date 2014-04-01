@@ -7,6 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -33,6 +34,26 @@ plugins=(git ruby cap autojump gem git-flow npm sublime vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 [[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && source ~/.autojump/etc/profile.d/autojump.zsh
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
 # Customize to your needs...
 export PATH=/home/antony/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+
+HISTFILE=~/.zhistory
+HISTSIZE=SAVEHIST=10000
+setopt sharehistory
+setopt extendedhistory
+
+zstyle ':completion:*:killall:*' command 'ps -u $USER -o cmd'
+setopt completeinword
+autoload -U compinit
+compinit
+setopt auto_cd
+
+bindkey \\C-R history-incremental-search-backward
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
