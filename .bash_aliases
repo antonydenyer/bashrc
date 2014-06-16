@@ -4,8 +4,8 @@ alias ..='cd ..'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # ls
-alias l="ls -al --group-directories-first --color"
-alias ll="ls -l --group-directories-first --color"
+alias l="ls -alGpF"
+alias ll="ls -lGpF"
 alias la='ls -Al'          # show hidden files
 alias lx='ls -lXB'         # sort by extension
 alias lk='ls -lSr'         # sort by size, biggest last
@@ -31,3 +31,7 @@ alias pull='git pull origin master'
 alias gl="git log --pretty=tformat:'%Cred%h%Creset %Cblue%d%Creset %Cgreen%s%Creset %cn, %cr' --graph"
 alias df='df -kTh'
 alias du='du -kh'
+
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias e='subl .'
+alias gpa='for d in `ls`; do; ( cd $d && git push );done'
